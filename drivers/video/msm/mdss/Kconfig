@@ -66,6 +66,17 @@ config FB_MSM_MDSS_MDP3
 config FB_MSM_MDSS_XLOG_DEBUG
 	depends on FB_MSM_MDSS
 	bool "Enable MDSS debugging"
+
+config FB_MSM_MDSS_KCAL_CTRL
+	depends on FB_MSM_MDSS
+	bool "MDSS color control"
+	---help---
+	  Enable sysfs for post-processing control of mdss-mdp5 display
+	  controllers in MDSS.
+
+config FB_MSM_MDSS_TIMEOUT_DUMP
+	bool 'MDSS Timeout Dump'
+	default n
 	---help---
 	The MDSS debugging provides support to enable display debugging
 	features to: Dump MDSS registers during driver errors, panic
