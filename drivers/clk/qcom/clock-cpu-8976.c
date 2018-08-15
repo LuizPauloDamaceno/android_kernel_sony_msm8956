@@ -457,6 +457,7 @@ static struct mux_clk cpu_debug_ter_mux = {
 	.c = {
 		.dbg_name = "cpu_debug_ter_mux",
 		.ops = &clk_ops_gen_mux,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(cpu_debug_ter_mux.c),
 	},
 };
@@ -475,6 +476,7 @@ static struct mux_clk cpu_debug_sec_mux = {
 	.c = {
 		.dbg_name = "cpu_debug_sec_mux",
 		.ops = &clk_ops_gen_mux,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(cpu_debug_sec_mux.c),
 	},
 };
@@ -493,6 +495,7 @@ static struct mux_clk cpu_debug_pri_mux = {
 	.c = {
 		.dbg_name = "cpu_debug_pri_mux",
 		.ops = &clk_ops_gen_mux,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(cpu_debug_pri_mux.c),
 	},
 };
