@@ -388,8 +388,8 @@
 		regulator-max-microvolt = <9>;
 
 		qcom,cpr-fuse-corners = <3>;
-		qcom,cpr-voltage-ceiling = <950000 1050000 1165000>;
-		qcom,cpr-voltage-floor =   <795000  835000  930000>;
+		qcom,cpr-voltage-ceiling = <950000 1050000 1145000>;
+		qcom,cpr-voltage-floor =   <795000  835000  910000>;
 		vdd-apc-supply = <&pm8950_s5>;
 
 		vdd-mx-supply = <&pm8950_s6_level_ao>;
@@ -439,7 +439,7 @@
 		qcom,cpr-fuse-revision = <59 53 3 0>;
 		qcom,speed-bin-fuse-sel = <37 34 3 0>;
 
-		qcom,cpr-init-voltage-ref = <950000 1050000 1165000>;
+		qcom,cpr-init-voltage-ref = <950000 1050000 1145000>;
 		qcom,cpr-init-voltage-step = <10000>;
 
 		qcom,cpr-corner-map = <1 1 2 2 3 3 3 3 3>;
@@ -473,7 +473,7 @@
 			<0  0   0>;
 		qcom,cpr-voltage-floor-override =
 			<(-1) (-1) 795000 795000 835000 855000
-			945000 945000 990000 990000 990000>;
+			945000 945000 970000 970000 970000>;
 		qcom,cpr-enable;
 	};
 
@@ -487,8 +487,8 @@
 		regulator-max-microvolt = <9>;
 
 		qcom,cpr-fuse-corners = <3>;
-		qcom,cpr-voltage-ceiling = <950000 1050000 1165000>;
-		qcom,cpr-voltage-floor =   <790000  820000  915000>;
+		qcom,cpr-voltage-ceiling = <950000 1050000 1145000>;
+		qcom,cpr-voltage-floor =   <790000  820000  890000>;
 		vdd-apc-supply = <&pm8004_s2>;
 
 		vdd-mx-supply = <&pm8950_s6_level_ao>;
@@ -539,7 +539,7 @@
 		qcom,cpr-fuse-revision = <59 53 3 0>;
 		qcom,speed-bin-fuse-sel = <37 34 3 0>;
 
-		qcom,cpr-init-voltage-ref = <950000 1050000 1165000>;
+		qcom,cpr-init-voltage-ref = <950000 1050000 1145000>;
 		qcom,cpr-init-voltage-step = <10000>;
 
 		qcom,cpr-corner-map = <1 1 2 2 3 3 3 3 3>;
@@ -572,7 +572,7 @@
 			<0    0  0>;
 		qcom,cpr-voltage-floor-override =
 			<(-1) (-1) 790000 790000 820000 850000
-			940000 990000 990000 990000 990000>;
+			940000 970000 970000 970000 970000>;
 
 		qcom,cpr-enable;
 	};
@@ -607,10 +607,10 @@
 
 		qcom,cpr-voltage-ceiling =
 				<810000 865000 900000 950000 1010000
-				1050000 1110000 1165000 1165000>;
+				1050000 1110000 1145000 1145000>;
 		qcom,cpr-voltage-floor =
 				<755000 755000 755000 795000 835000
-				855000 920000 945000 945000>;
+				855000 910000 925000 925000>;
 		vdd-gfx-supply = <&pm8004_s5>;
 
 		vdd-mx-supply = <&pm8950_s6_level_ao>;
@@ -643,7 +643,7 @@
 
 		qcom,cpr-init-voltage-ref =
 				<865000 865000 950000 950000 950000
-				1050000 1050000 1165000 1165000>;
+				1050000 1050000 1145000 1145000>;
 		qcom,cpr-fuse-init-voltage =
 					<72 50 5>,
 					<72 50 5>,
