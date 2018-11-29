@@ -140,7 +140,7 @@
 #define WCD9335_DEC_PWR_LVL_HP 0x04
 #define WCD9335_DEC_PWR_LVL_DF 0x00
 
-#define CALCULATE_VOUT_D(req_mv) (((req_mv - 650) * 10) / 25)
+#define CALCULATE_VOUT_D(req_mv) (((req_mv - 275) * 10) / 25)
 
 #define DAPM_LDO_H_STANDALONE "LDO_H"
 
@@ -164,8 +164,8 @@ enum {
 };
 
 enum tasha_sido_voltage {
-	SIDO_VOLTAGE_SVS_MV = 950,
-	SIDO_VOLTAGE_NOMINAL_MV = 1100,
+	SIDO_VOLTAGE_SVS_MV = 1100,
+	SIDO_VOLTAGE_NOMINAL_MV = 1300,
 };
 
 static int dig_core_collapse_enable = 1;
@@ -11489,7 +11489,7 @@ static const struct tasha_reg_mask_val tasha_codec_reg_init_val_2_0[] = {
 	{WCD9335_RCO_CTRL_2, 0x0F, 0x08},
 	{WCD9335_RX_BIAS_FLYB_MID_RST, 0xF0, 0x10},
 	{WCD9335_FLYBACK_CTRL_1, 0x20, 0x20},
-	{WCD9335_HPH_OCP_CTL, 0xFF, 0x5A},
+	{WCD9335_HPH_OCP_CTL, 0xFF, 0xA0},
 	{WCD9335_HPH_L_TEST, 0x01, 0x01},
 	{WCD9335_HPH_R_TEST, 0x01, 0x01},
 	{WCD9335_CDC_BOOST0_BOOST_CFG1, 0x3F, 0x12},
@@ -11599,7 +11599,7 @@ static const struct tasha_reg_mask_val tasha_codec_reg_init_1_x_val[] = {
 	{WCD9335_CDC_RX5_RX_PATH_SEC0, 0xF8, 0xF8},
 	{WCD9335_CDC_RX6_RX_PATH_SEC0, 0xF8, 0xF8},
 	{WCD9335_RX_OCP_COUNT, 0xFF, 0xFF},
-	{WCD9335_HPH_OCP_CTL, 0xF0, 0x70},
+	{WCD9335_HPH_OCP_CTL, 0xF0, 0xA0},
 	{WCD9335_CPE_SS_CPAR_CFG, 0xFF, 0x00},
 	{WCD9335_FLYBACK_VNEG_CTRL_1, 0xFF, 0x63},
 	{WCD9335_FLYBACK_VNEG_CTRL_4, 0xFF, 0x7F},
