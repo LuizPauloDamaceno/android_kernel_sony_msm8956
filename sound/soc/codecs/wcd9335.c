@@ -104,7 +104,7 @@
 	(TASHA_CPE_SS_ERR_STATUS_WDOG_BITE | \
 	 TASHA_CPE_SS_ERR_STATUS_MEM_ACCESS)
 
-#define SLIM_BW_CLK_GEAR_9 6200000
+#define SLIM_BW_CLK_GEAR_10 24600000
 #define SLIM_BW_UNVOTE 0
 
 #define CPE_FLL_CLK_75MHZ 75000000
@@ -140,7 +140,7 @@
 #define WCD9335_DEC_PWR_LVL_HP 0x04
 #define WCD9335_DEC_PWR_LVL_DF 0x00
 
-#define CALCULATE_VOUT_D(req_mv) (((req_mv - 275) * 10) / 25)
+#define CALCULATE_VOUT_D(req_mv) (((req_mv - 200) * 10) / 25)
 
 #define DAPM_LDO_H_STANDALONE "LDO_H"
 
@@ -164,7 +164,7 @@ enum {
 };
 
 enum tasha_sido_voltage {
-	SIDO_VOLTAGE_SVS_MV = 975,
+	SIDO_VOLTAGE_SVS_MV = 1000,
 	SIDO_VOLTAGE_NOMINAL_MV = 1300,
 };
 
@@ -12251,7 +12251,7 @@ static int tasha_codec_vote_max_bw(struct snd_soc_codec *codec,
 		return 0;
 
 	if (vote)
-		bw_ops = SLIM_BW_CLK_GEAR_9;
+		bw_ops = SLIM_BW_CLK_GEAR_10;
 	else
 		bw_ops = SLIM_BW_UNVOTE;
 
