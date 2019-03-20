@@ -144,7 +144,7 @@ static struct pll_vote_clk gpll2_clk_src = {
 	.status_mask = BIT(17),
 	.base = &virt_bases[GCC_BASE],
 	.c = {
-		.rate = 932000000,
+		.rate = 1049000000,
 		.parent = &xo_clk_src.c,
 		.dbg_name = "gpll2_clk_src",
 		.ops = &clk_ops_pll_vote,
@@ -1313,7 +1313,8 @@ static struct clk_freq_tbl ftbl_gfx3d_clk_src[] = {
 	F( 480000000,    gpll4_gfx3d,  2.5,    0,     0),
 	F( 550000000,          gpll3,    2,    0,     0),
 	F( 600000000,    gpll4_gfx3d,    2,    0,     0),
-	F( 700000000,          gpll3,  1.5,    0,     0),
+	F( 621330000,    gpll2_gfx3d,  1.5,    0,     0),
+	F( 660000000,	       gpll3,  1.5,    0,     0),
 	F_END
 };
 
@@ -1336,6 +1337,7 @@ static struct clk_freq_tbl ftbl_gfx3d_clk_src_v1[] = {
 	F( 550000000,          gpll3,    2,    0,     0),
 	F( 600000000,    gpll4_gfx3d,    2,    0,     0),
 	F( 621330000,    gpll2_gfx3d,  1.5,    0,     0),
+	F( 660000000,          gpll3,  1.5,    0,     0),
 	F_END
 };
 
@@ -2598,7 +2600,8 @@ static struct branch_clk gcc_oxili_gfx3d_clk = {
 		.parent = &gfx3d_clk_src.c,
 		VDD_DIG_FMAX_MAP5(LOWER, 300000000, LOW, 366670000,
 				NOMINAL, 432000000, NOM_PLUS, 480000000,
-				HIGH, 700000000),
+				HIGH, 660000000),
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		.ops = &clk_ops_branch,
 		CLK_INIT(gcc_oxili_gfx3d_clk.c),
 	},
@@ -4078,7 +4081,7 @@ static int msm_gcc_gfx_probe(struct platform_device *pdev)
 
 	if (version) {
 		gfx3d_clk_src.freq_tbl = ftbl_gfx3d_clk_src_v1;
-		gcc_oxili_gfx3d_clk.c.fmax[VDD_DIG_HIGH] = 621330000;
+		gcc_oxili_gfx3d_clk.c.fmax[VDD_DIG_HIGH] = 660000000;
 	}
 
 	ret = of_msm_clock_register(pdev->dev.of_node, msm_clocks_gcc_gfx,
