@@ -120,7 +120,7 @@
 /* Convert from vout ctl to micbias voltage in mV */
 #define WCD_VOUT_CTL_TO_MICB(v) (1000 + v * 50)
 
-#define TASHA_ZDET_NUM_MEASUREMENTS 150
+#define TASHA_ZDET_NUM_MEASUREMENTS 600
 #define TASHA_MBHC_GET_C1(c)  ((c & 0xC000) >> 14)
 #define TASHA_MBHC_GET_X1(x)  (x & 0x3FFF)
 /* z value compared in milliOhm */
@@ -140,7 +140,7 @@
 #define WCD9335_DEC_PWR_LVL_HP 0x04
 #define WCD9335_DEC_PWR_LVL_DF 0x00
 
-#define CALCULATE_VOUT_D(req_mv) (((req_mv - 200) * 10) / 25)
+#define CALCULATE_VOUT_D(req_mv) (((req_mv - 110) * 10) / 25)
 
 #define DAPM_LDO_H_STANDALONE "LDO_H"
 
@@ -164,8 +164,8 @@ enum {
 };
 
 enum tasha_sido_voltage {
-	SIDO_VOLTAGE_SVS_MV = 1000,
-	SIDO_VOLTAGE_NOMINAL_MV = 1300,
+	SIDO_VOLTAGE_SVS_MV = 1050,
+	SIDO_VOLTAGE_NOMINAL_MV = 1350,
 };
 
 static int dig_core_collapse_enable = 1;
@@ -204,7 +204,7 @@ static struct afe_param_slimbus_slave_port_cfg tasha_slimbus_slave_port_cfg = {
 	.slimbus_dev_id = AFE_SLIMBUS_DEVICE_1,
 	.slave_dev_pgd_la = 0,
 	.slave_dev_intfdev_la = 0,
-	.bit_width = 16,
+	.bit_width = 24,
 	.data_format = 0,
 	.num_channels = 1
 };
