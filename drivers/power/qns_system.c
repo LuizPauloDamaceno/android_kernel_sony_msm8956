@@ -32,7 +32,7 @@
 
 #define QNS_USE_PM8941
 #define READ_CURRENT_SIGN	(-1)
-#define CHARGE_CURRENT_PROP	POWER_SUPPLY_PROP_MAX_CHARGE_CURRENT
+#define CHARGE_CURRENT_PROP	POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT_MAX
 
 #ifdef QNS_USE_PM8941
 #define IBATMANAME		"battery"
@@ -40,6 +40,8 @@
 
 #define QNS_OK		0
 #define QNS_ERROR	-1
+
+int32_t full_charge;
 
 static struct power_supply * ibat_psy = NULL;
 static struct power_supply * battery_psy = NULL;
@@ -229,6 +231,7 @@ static int qns_get_fcc(int *fcc, int *design)
 			}
 			else
 				*fcc = ret.intval/1000;
+				//full_charge = *fcc;
 		}
 		if(design != NULL)
 		{
@@ -397,14 +400,19 @@ static ssize_t qns_param_store(struct class *dev,
 	int val, ret = -EINVAL;
 	ktime_t next_alarm;
 	const ptrdiff_t off = attr - qns_attrs;
-
 	switch(off)
 	{
 	case CHARGE_CURRENT:
 		ret = kstrtoint(buf, 10, &val);
-		if (!ret && (val > 0))
+		qns_get_fcc(&full_charge, NULL);
+		if (!ret && (val > 0) && full_charge >= 2300)
 		{
-			qns_set_ibat(val);
+			qns_set_ibat(2400); //Sets charging current to Turbo tweak profile
+			return count;
+		}
+		if (!ret && (val > 0) && full_charge < 2300)
+		{
+			qns_set_ibat(val); //Sets charging current to QNS profile
 			return count;
 		}
 		else
@@ -531,3 +539,5 @@ static void qnovo_qns_exit(void)
 
 module_init(qnovo_qns_init);
 module_exit(qnovo_qns_exit);
+
+
