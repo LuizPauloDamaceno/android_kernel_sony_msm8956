@@ -368,6 +368,7 @@
 			compatible = "qcom,qpnp-regulator";
 			reg = <0x2000 0x100>;
 			regulator-name = "pm8004_s5";
+			qcom,init-quiet-mode = <2>; //Regulator EMI noise reduction
 			regulator-min-microvolt = <500000>;
 			regulator-max-microvolt = <1165000>;
 			qcom,auto-mode-enable = <1>;
@@ -473,7 +474,7 @@
 			<0  0   0>;
 		qcom,cpr-voltage-floor-override =
 			<(-1) (-1) 795000 795000 835000 855000
-			945000 945000 970000 970000 970000>;
+			945000 945000 950000 960000 970000>;
 		qcom,cpr-enable;
 	};
 
@@ -572,7 +573,7 @@
 			<0    0  0>;
 		qcom,cpr-voltage-floor-override =
 			<(-1) (-1) 790000 790000 820000 850000
-			940000 970000 970000 995000 1025000>;
+			940000 970000 970000 995000 1000000>;
 
 		qcom,cpr-enable;
 	};
@@ -610,7 +611,7 @@
 				1050000 1110000 1145000 1145000>;
 		qcom,cpr-voltage-floor =
 				<755000 755000 755000 795000 835000
-				855000 910000 925000 925000>;
+				855000 910000 920000 950000>;
 		vdd-gfx-supply = <&pm8004_s5>;
 
 		vdd-mx-supply = <&pm8950_s6_level_ao>;
