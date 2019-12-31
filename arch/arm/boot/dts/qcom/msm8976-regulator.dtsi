@@ -443,7 +443,7 @@
 		qcom,cpr-init-voltage-ref = <950000 1050000 1145000>;
 		qcom,cpr-init-voltage-step = <10000>;
 
-		qcom,cpr-corner-map = <1 1 2 2 3 3 3 3 3>;
+		qcom,cpr-corner-map = <1 1 1 1 2 2 3 3 3>;
 
 		qcom,cpr-scaled-init-voltage-as-ceiling;
 		qcom,cpr-voltage-scaling-factor-max = <0 2000 2000>;
@@ -543,7 +543,7 @@
 		qcom,cpr-init-voltage-ref = <950000 1050000 1170000>;
 		qcom,cpr-init-voltage-step = <10000>;
 
-		qcom,cpr-corner-map = <1 1 2 2 3 3 3 3 3>;
+		qcom,cpr-corner-map = <1 1 2 2 2 3 3 3 3>;
 		qcom,cpr-scaled-init-voltage-as-ceiling;
 		qcom,cpr-voltage-scaling-factor-max = <0 2000 2000>;
 		qcom,cpr-quot-adjust-scaling-factor-max = <0 1400 1400>;
@@ -573,7 +573,7 @@
 			<0    0  0>;
 		qcom,cpr-voltage-floor-override =
 			<(-1) (-1) 790000 790000 820000 850000
-			940000 970000 970000 995000 1000000>;
+			940000 960000 970000 980000 995000>;
 
 		qcom,cpr-enable;
 	};
@@ -611,7 +611,7 @@
 				1050000 1110000 1145000 1145000>;
 		qcom,cpr-voltage-floor =
 				<755000 755000 755000 795000 835000
-				855000 910000 920000 950000>;
+				855000 920000 930000 960000>;
 		vdd-gfx-supply = <&pm8004_s5>;
 
 		vdd-mx-supply = <&pm8950_s6_level_ao>;
