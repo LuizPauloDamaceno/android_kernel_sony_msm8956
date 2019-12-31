@@ -2880,6 +2880,7 @@ static struct local_vote_clk gcc_apss_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_apss_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_apss_ahb_clk.c),
 	},
 };
@@ -2892,6 +2893,7 @@ static struct local_vote_clk gcc_apss_axi_clk = {
 	.c = {
 		.dbg_name = "gcc_apss_axi_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_apss_axi_clk.c),
 	},
 };
@@ -2904,6 +2906,7 @@ static struct local_vote_clk gcc_blsp1_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_blsp1_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_blsp1_ahb_clk.c),
 	},
 };
@@ -2917,6 +2920,7 @@ static struct local_vote_clk gcc_blsp2_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_blsp2_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_blsp2_ahb_clk.c),
 	},
 };
@@ -2929,6 +2933,7 @@ static struct local_vote_clk gcc_prng_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_prng_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_prng_ahb_clk.c),
 	},
 };
@@ -2941,6 +2946,7 @@ static struct local_vote_clk gcc_boot_rom_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_boot_rom_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_boot_rom_ahb_clk.c),
 	},
 };
@@ -2953,6 +2959,7 @@ static struct local_vote_clk gcc_crypto_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_crypto_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_crypto_ahb_clk.c),
 	},
 };
@@ -2965,6 +2972,7 @@ static struct local_vote_clk gcc_crypto_axi_clk = {
 	.c = {
 		.dbg_name = "gcc_crypto_axi_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_crypto_axi_clk.c),
 	},
 };
@@ -2978,6 +2986,7 @@ static struct local_vote_clk gcc_crypto_clk = {
 		.dbg_name = "gcc_crypto_clk",
 		.parent = &crypto_clk_src.c,
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_crypto_clk.c),
 	},
 };
@@ -2990,6 +2999,7 @@ static struct local_vote_clk gcc_cpp_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_cpp_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_cpp_tbu_clk.c),
 	},
 };
@@ -3002,6 +3012,7 @@ static struct local_vote_clk gcc_gfx_1_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_gfx_1_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_gfx_1_tbu_clk.c),
 	},
 };
@@ -3014,6 +3025,7 @@ static struct local_vote_clk gcc_gfx_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_gfx_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_gfx_tbu_clk.c),
 	},
 };
@@ -3026,6 +3038,7 @@ static struct local_vote_clk gcc_gfx_tcu_clk = {
 	.c = {
 		.dbg_name = "gcc_gfx_tcu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_gfx_tcu_clk.c),
 	},
 };
@@ -3038,6 +3051,7 @@ static struct local_vote_clk gcc_apss_tcu_clk = {
 	.c = {
 		.dbg_name = "gcc_apss_tcu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_apss_tcu_clk.c),
 	},
 };
@@ -3050,6 +3064,7 @@ static struct local_vote_clk gcc_gtcu_ahb_clk = {
 	.c = {
 		.dbg_name = "gcc_gtcu_ahb_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_gtcu_ahb_clk.c),
 	},
 };
@@ -3062,6 +3077,7 @@ static struct local_vote_clk gcc_jpeg_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_jpeg_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_jpeg_tbu_clk.c),
 	},
 };
@@ -3074,6 +3090,7 @@ static struct local_vote_clk gcc_mdp_rt_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_mdp_rt_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_mdp_rt_tbu_clk.c),
 	},
 };
@@ -3086,6 +3103,7 @@ static struct local_vote_clk gcc_mdp_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_mdp_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_mdp_tbu_clk.c),
 	},
 };
@@ -3098,6 +3116,7 @@ static struct local_vote_clk gcc_smmu_cfg_clk = {
 	.c = {
 		.dbg_name = "gcc_smmu_cfg_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_smmu_cfg_clk.c),
 	},
 };
@@ -3110,6 +3129,7 @@ static struct local_vote_clk gcc_venus_1_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_venus_1_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_venus_1_tbu_clk.c),
 	},
 };
@@ -3122,6 +3142,7 @@ static struct local_vote_clk gcc_venus_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_venus_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_venus_tbu_clk.c),
 	},
 };
@@ -3134,6 +3155,7 @@ static struct local_vote_clk gcc_vfe1_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_vfe1_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_vfe1_tbu_clk.c),
 	},
 };
@@ -3146,6 +3168,7 @@ static struct local_vote_clk gcc_vfe_tbu_clk = {
 	.c = {
 		.dbg_name = "gcc_vfe_tbu_clk",
 		.ops = &clk_ops_vote,
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		CLK_INIT(gcc_vfe_tbu_clk.c),
 	},
 };
