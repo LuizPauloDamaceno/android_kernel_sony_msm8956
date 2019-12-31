@@ -458,13 +458,13 @@
 			qcom,pin-func = <0>;
 			label = "wsa-spkr-sd";
 			wsa_spkr_sd_act: lines_on {
-				drive-strength = <2>;
+				drive-strength = <4>;
 				output-high;
 				bias-pull-down;
 			};
 
 			wsa_spkr_sd_sus: lines_off {
-				drive-strength = <2>;
+				drive-strength = <4>;
 				output-low;
 				bias-disable;
 			};
@@ -861,22 +861,27 @@
 
 &pmi8950_fg {
 	qcom,battery-data = <&loire_batterydata>;
-	qcom,hot-bat-decidegc = <550>;
-	qcom,warm-bat-decidegc = <450>;
-	qcom,cool-bat-decidegc = <100>;
-	qcom,cold-bat-decidegc = <50>;
-	qcom,cl-max-increment-deciperc = <0>;
-	qcom,cl-max-decrement-deciperc = <20>;
-	qcom,cl-max-start-capacity = <40>;
+	qcom,hot-bat-decidegc = <520>;
+	qcom,warm-bat-decidegc = <470>;
+	qcom,cool-bat-decidegc = <250>;
+	qcom,cold-bat-decidegc = <270>;
+	qcom,cycle-counter-en;
+	qcom,capacity-learning-on;
+	qcom,capacity-learning-feedback;
+	qcom,capacity-estimation-on;
+	qcom,aging-eval-current-ma = <75>;
+	qcom,cl-max-increment-deciperc = <19>;
+	qcom,cl-max-decrement-deciperc = <32>;
+	qcom,cl-max-start-capacity = <35>;
 	qcom,hold-soc-while-full;
-	qcom,fg-chg-iterm-ma = <140>;
-	qcom,fg-iterm-ma = <140>;
+	qcom,fg-chg-iterm-ma = <150>;
+	qcom,fg-iterm-ma = <150>;
 	qcom,thermal-coefficients = [EC 85 75 4A FC 35];
 	qcom,ext-sense-type;
 	qcom,fg-cutoff-voltage-mv = <3200>;
 	qcom,vbat-estimate-diff-mv = <200>;
 	qcom,cl-vbat-est-thr-uv = <300000>;
-	qcom,fg-cc-cv-threshold-mv = <4290>;
+	qcom,fg-cc-cv-threshold-mv = <4310>;
 	somc,resume-soc-raw-full-normal = <0xF3>;
 	somc,resume-soc-raw-full-aging = <0xE3>;
 	somc,resume-soc-raw-not-full-normal = <0xFD>;
@@ -890,11 +895,15 @@
 	qcom,usb_dp-vadc = <&pmi8950_vadc>;
 	qcom,usb_dm-vadc = <&pmi8950_vadc>;
 	qcom,usbin-vadc = <&pmi8950_vadc>;
-	qcom,float-voltage-mv = <4300>;
+	qcom,float-voltage-mv = <4335>;
 	qcom,precharging-timeout-mins = <24>;
 	qcom,charging-timeout-mins = <768>;
 	qcom,bmd-pin-src = "bpd_none";
+	qcom,batt-aging-comp;
+	qcom,low-volt-dcin;
 	qcom,force-aicl-rerun;
+	qcom,aicl-rerun-period-s = <45>;
+	qcom,override-usb-current;
 	id_poll_enable;
 	id_poll_up_interval = <2000>;
 	id_poll_up_period = <50000>;
