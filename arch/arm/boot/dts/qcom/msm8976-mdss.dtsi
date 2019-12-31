@@ -25,25 +25,25 @@
 		qcom,msm-bus,num-paths = <2>;
 		qcom,msm-bus,vectors-KBps =
 			<22 512 0 0>, <23 512 0 0>,
-			<22 512 0 6400000>, <23 512 0 6400000>,
-			<22 512 0 6400000>, <23 512 0 6400000>;
+			<22 512 0 6600000>, <23 512 0 6600000>,
+			<22 512 0 6600000>, <23 512 0 6600000>;
 
 		/* Fudge factors */
 		qcom,mdss-ab-factor = <1 1>;		/* no fudge    */
 		qcom,mdss-ib-factor = <1 1>;		/* no fudge  */
 		qcom,mdss-ib-factor-cmd = <1 1>;	/* no fudge */
 		qcom,mdss-clk-factor = <105 100>;	/* 1.05 times */
-		qcom,max-bandwidth-low-kbps = <5700000>;
-		qcom,max-bandwidth-high-kbps = <5700000>;
-		qcom,max-bandwidth-per-pipe-kbps = <4 2100000>,	/* HFlip */
-						   <8 1800000>;	/* VFlip */
+		qcom,max-bandwidth-low-kbps = <5800000>;
+		qcom,max-bandwidth-high-kbps = <5800000>;
+		qcom,max-bandwidth-per-pipe-kbps = <4 2400000>,	/* HFlip */
+						   <8 2000000>;	/* VFlip */
 
 		/* VBIF QoS remapper settings*/
 		qcom,mdss-vbif-qos-rt-setting = <2 2 2 2>;
 		qcom,mdss-vbif-qos-nrt-setting = <1 1 1 1>;
 		qcom,max-mixer-width = <2560>;
 		qcom,mdss-mdp-reg-offset = <0x00001000>;
-		qcom,max-clk-rate = <360000000>;
+		qcom,max-clk-rate = <400000000>;
 		qcom,mdss-pipe-vig-off = <0x00005000 0x00007000>;
 		qcom,mdss-pipe-rgb-off = <0x00015000 0x00017000>;
 		qcom,mdss-pipe-dma-off = <0x00025000>;

@@ -258,7 +258,7 @@
 			< 480000000   7 >,  /* Turbo     */
 			< 550000000   8 >,  /* Super Turbo */
 			< 600000000   9 >,  /* Super Turbo */
-			< 700000000   9 >;  /* Super Turbo */
+			< 680000000   9 >;  /* Super Turbo */
 		qcom,gfxfreq-corner-v1 =
 			<         0   0 >,
 			< 133333333   1 >,  /* Min SVS   */
@@ -2935,22 +2935,22 @@
 
 		cdc-vdd-buck-supply = <&eldo2_8976>;
 		qcom,cdc-vdd-buck-voltage = <1800000 1800000>;
-		qcom,cdc-vdd-buck-current = <750000>;
+		qcom,cdc-vdd-buck-current = <950000>;
 
 		cdc-buck-sido-supply = <&eldo2_8976>;
 		qcom,cdc-buck-sido-voltage = <1800000 1800000>;
-		qcom,cdc-buck-sido-current = <350000>;
+		qcom,cdc-buck-sido-current = <550000>;
 		cdc-vdd-tx-h-supply = <&pm8950_l5>;
 		qcom,cdc-vdd-tx-h-voltage = <1800000 1800000>;
-		qcom,cdc-vdd-tx-h-current = <30000>;
+		qcom,cdc-vdd-tx-h-current = <50000>;
 
 		cdc-vdd-rx-h-supply = <&pm8950_l5>;
 		qcom,cdc-vdd-rx-h-voltage = <1800000 1800000>;
-		qcom,cdc-vdd-rx-h-current = <30000>;
+		qcom,cdc-vdd-rx-h-current = <50000>;
 
 		cdc-vdd-px-supply = <&pm8950_l5>;
 		qcom,cdc-vdd-px-voltage = <1800000 1800000>;
-		qcom,cdc-vdd-px-current = <15000>;
+		qcom,cdc-vdd-px-current = <30000>;
 
 		qcom,cdc-static-supplies =
 			"cdc-vdd-buck",
@@ -3028,27 +3028,27 @@
 
 		cdc-vdda-cp-supply = <&pm8950_s4>;
 		qcom,cdc-vdda-cp-voltage = <2050000 2050000>;
-		qcom,cdc-vdda-cp-current = <600000>;
+		qcom,cdc-vdda-cp-current = <950000>;
 
 		cdc-vdda-rx-h-supply = <&pm8950_l5>;
 		qcom,cdc-vdda-rx-h-voltage = <1800000 1800000>;
-		qcom,cdc-vdda-rx-h-current = <10000>;
+		qcom,cdc-vdda-rx-h-current = <20000>;
 
 		cdc-vdda-tx-h-supply = <&pm8950_l5>;
 		qcom,cdc-vdda-tx-h-voltage = <1800000 1800000>;
-		qcom,cdc-vdda-tx-h-current = <10000>;
+		qcom,cdc-vdda-tx-h-current = <20000>;
 
 		cdc-vdd-px-supply = <&pm8950_l5>;
 		qcom,cdc-vdd-px-voltage = <1800000 1800000>;
-		qcom,cdc-vdd-px-current = <10000>;
+		qcom,cdc-vdd-px-current = <20000>;
 
 		cdc-vdd-pa-supply = <&pm8950_s4>;
 		qcom,cdc-vdd-pa-voltage = <2050000 2050000>;
-		qcom,cdc-vdd-pa-current = <360000>;
+		qcom,cdc-vdd-pa-current = <550000>;
 
 		cdc-vdd-mic-bias-supply = <&pm8950_l13>;
 		qcom,cdc-vdd-mic-bias-voltage = <3075000 3075000>;
-		qcom,cdc-vdd-mic-bias-current = <5000>;
+		qcom,cdc-vdd-mic-bias-current = <10000>;
 
 		qcom,cdc-mclk-clk-rate = <9600000>;
 
