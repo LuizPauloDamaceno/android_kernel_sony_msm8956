@@ -60,14 +60,14 @@
 };
 
 &pmi8950_charger {
-	qcom,ibat-ocp-threshold-ua = <2800000>;
+	qcom,ibat-ocp-threshold-ua = <2500000>;
 	qcom,fastchg-current-ma = <2400>;
 	somc,usb-9v-current-max = <1600>;
 	somc,usb-5v-current-max = <2000>;
 	qcom,float-voltage-comp = <0x14>;
 	somc,fastchg-warm-current-ma = <1000>;
 	somc,fastchg-cool-current-ma = <1200>;
-	somc,thermal-engine-fastchg-current = <2400 2300 2100 2050 2000 1850 1500 1300 1100 700 600 500 400 300 0>;
+	somc,thermal-engine-fastchg-current = <2400 2300 2100 2050 2000 1850 1500 1300 1100 900 700 600 500 400 300>;
 	somc,thermal-mitigation-usb-9v = <1600 1500 1400 1300 1200 1100 1000 900 700 600 500 400 300 0 0>;
 	somc,thermal-mitigation-usb-8v = <1800 1800 1800 1500 1100 1100 1100 1100 1200 900 700 500 300 0 0>;
 	somc,thermal-mitigation-usb-7v = <2000 2000 2000 1500 1200 1200 1200 1200 1200 900 700 500 300 0 0>;
@@ -83,7 +83,7 @@
 			somc,init-br-ua = <3500>;
 			somc-s1,br-power-save-ua = <800>;
 			qcom,led-strings-list = [00 01 02];
-			qcom,ilim-ma = <700>;
+			qcom,ilim-ma = <725>;
 		};
 	};
 };
