@@ -186,7 +186,7 @@ static struct pll_clk a53ss_sr_pll = {
 		.config_ctl_val = 0x00141400,
 	},
 	.min_rate = 652800000,
-	.max_rate = 1478400000,
+	.max_rate = 1550000000,
 	.base = &virt_bases[APCS_C0_PLL_BASE],
 	.c =  {
 		.parent = &xo_a_clk.c,
@@ -255,7 +255,7 @@ static struct mux_div_clk a72ssmux = {
 	.ops = &rcg_mux_div_ops,
 	SRC_SAFE_FREQ(400000000, 800000000),
 	.data = {
-		.max_div = 32,
+		.max_div = 36,
 		.min_div = 2,
 		.is_half_divider = true,
 	},
@@ -280,7 +280,7 @@ static struct mux_div_clk a53ssmux = {
 	.ops = &rcg_mux_div_ops,
 	SRC_SAFE_FREQ(400000000, 800000000),
 	.data = {
-		.max_div = 32,
+		.max_div = 36,
 		.min_div = 2,
 		.is_half_divider = true,
 	},
@@ -305,12 +305,13 @@ static struct mux_div_clk ccissmux = {
 	.ops = &rcg_mux_div_ops,
 	.safe_freq = 200000000,
 	.data = {
-		.max_div = 32,
+		.max_div = 36,
 		.min_div = 2,
 		.is_half_divider = true,
 	},
 	.c = {
 		.dbg_name = "ccissmux",
+		.flags = CLKFLAG_NO_RATE_CACHE,
 		.ops = &clk_ops_mux_div_clk,
 		CLK_INIT(ccissmux.c),
 	},
@@ -1074,7 +1075,7 @@ static int clock_cpu_probe(struct platform_device *pdev)
 	}
 
 	a53_clk.hw_low_power_ctrl = true;
-	a72_clk.hw_low_power_ctrl = true;
+	a72_clk.hw_low_power_ctrl = false;
 
 	return 0;
 }
