@@ -683,20 +683,20 @@
 		qcom,msm-bus,vectors-KBps =
 			<55 512 0 0>,
 			<55 512 0 0>,
-			<55 512 120000 1200000>,
-			<55 512 393600 3936000>;
+			<55 512 120000 120000>,
+			<55 512 492000 492000>;
 		clocks = <&clock_gcc clk_crypto_clk_src>,
 			 <&clock_gcc clk_gcc_crypto_clk>,
 			 <&clock_gcc clk_gcc_crypto_ahb_clk>,
 			 <&clock_gcc clk_gcc_crypto_axi_clk>;
 		clock-names = "core_clk_src", "core_clk",
 				"iface_clk", "bus_clk";
-		qcom,ce-opp-freq = <160000000>;
+		qcom,ce-opp-freq = <200000000>;
 	};
 
 	qcom,bcl {
 		qcom,ibat-monitor {
-			qcom,soc-low-threshold = <5>;
+			qcom,soc-low-threshold = <10>;
 		};
 	};
 
@@ -881,7 +881,7 @@
 	qcom,fg-cutoff-voltage-mv = <3200>;
 	qcom,vbat-estimate-diff-mv = <200>;
 	qcom,cl-vbat-est-thr-uv = <300000>;
-	qcom,fg-cc-cv-threshold-mv = <4310>;
+	qcom,fg-cc-cv-threshold-mv = <4325>;
 	somc,resume-soc-raw-full-normal = <0xF3>;
 	somc,resume-soc-raw-full-aging = <0xE3>;
 	somc,resume-soc-raw-not-full-normal = <0xFD>;
@@ -895,7 +895,7 @@
 	qcom,usb_dp-vadc = <&pmi8950_vadc>;
 	qcom,usb_dm-vadc = <&pmi8950_vadc>;
 	qcom,usbin-vadc = <&pmi8950_vadc>;
-	qcom,float-voltage-mv = <4335>;
+	qcom,float-voltage-mv = <4400>;
 	qcom,precharging-timeout-mins = <24>;
 	qcom,charging-timeout-mins = <768>;
 	qcom,bmd-pin-src = "bpd_none";

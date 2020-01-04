@@ -62,8 +62,8 @@
 &pmi8950_charger {
 	qcom,ibat-ocp-threshold-ua = <2500000>;
 	qcom,fastchg-current-ma = <2400>;
-	somc,usb-9v-current-max = <1600>;
-	somc,usb-5v-current-max = <2000>;
+	somc,usb-9v-current-max = <1800>;
+	somc,usb-5v-current-max = <2100>;
 	qcom,float-voltage-comp = <0x14>;
 	somc,fastchg-warm-current-ma = <1000>;
 	somc,fastchg-cool-current-ma = <1200>;
@@ -72,7 +72,7 @@
 	somc,thermal-mitigation-usb-8v = <1800 1800 1800 1500 1100 1100 1100 1100 1200 900 700 500 300 0 0>;
 	somc,thermal-mitigation-usb-7v = <2000 2000 2000 1500 1200 1200 1200 1200 1200 900 700 500 300 0 0>;
 	somc,thermal-mitigation-usb-6v = <2000 2000 2000 1500 1500 1500 1500 1500 1200 900 700 500 300 0 0>;
-	somc,thermal-mitigation-usb-5v = <2000 1800 1700 1600 1500 1500 1400 1300 1200 900 700 500 300 0 0>;
+	somc,thermal-mitigation-usb-5v = <2100 2000 1800 1700 1600 1500 1400 1300 1200 900 700 500 300 0 0>;
 	qcom,autoadjust-vfloat;
 	somc,limit-usb-5v-level = <15>;
 };
