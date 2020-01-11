@@ -49,9 +49,9 @@
 
 		qcom,chipid = <0x05010000>;
 
-		qcom,initial-pwrlevel = <5>;
+		qcom,initial-pwrlevel = <3>;
 
-		qcom,idle-timeout = <8>; //<HZ/12>
+		qcom,idle-timeout = <83>; //<HZ/12>
 		qcom,strtstp-sleepwake;
 
 		qcom,pm-qos-active-latency = <401>;
@@ -88,7 +88,7 @@
 		/* Bus Scale Settings */
 		qcom,gpubw-dev = <&gpubw>;
 		qcom,bus-control;
-		qcom,bus-width = <16>;
+		qcom,bus-width = <32>;
 		qcom,msm-bus,name = "grp3d";
 		qcom,msm-bus,num-cases = <11>;
 		qcom,msm-bus,num-paths = <1>;
@@ -135,7 +135,7 @@
 		qcom,gpu-speed-config@0 {
 			compatible = "gpu-speed-config@0";
 
-			qcom,initial-pwrlevel = <4>;
+			qcom,initial-pwrlevel = <3>;
 
 			/* Power levels */
 			qcom,gpu-pwrlevels {
@@ -147,7 +147,7 @@
 				/* SUPER TURBO */
 				qcom,gpu-pwrlevel@0 {
 					reg = <0>;
-					qcom,gpu-freq = <665000000>;
+					qcom,gpu-freq = <675000000>;
 					qcom,bus-freq = <10>;
 					qcom,bus-min = <10>;
 					qcom,bus-max = <10>;

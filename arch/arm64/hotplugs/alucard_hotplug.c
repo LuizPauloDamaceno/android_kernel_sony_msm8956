@@ -73,9 +73,9 @@ static struct hotplug_tuners {
 #else
 	.hotplug_enable = 1,
 #endif
-	.min_cpus_online = 1,
+	.min_cpus_online = 2,
 	.maxcoreslimit = NR_CPUS,
-	.maxcoreslimit_sleep = 1,
+	.maxcoreslimit_sleep = 2,
 	.hp_io_is_busy = 0,
 #if defined(CONFIG_POWERSUSPEND) || \
 	defined(CONFIG_HAS_EARLYSUSPEND)

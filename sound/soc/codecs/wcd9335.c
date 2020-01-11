@@ -140,7 +140,7 @@
 #define WCD9335_DEC_PWR_LVL_HP 0x04
 #define WCD9335_DEC_PWR_LVL_DF 0x00
 
-#define CALCULATE_VOUT_D(req_mv) (((req_mv - 110) * 10) / 25)
+#define CALCULATE_VOUT_D(req_mv) (((req_mv - 100) * 10) / 25)
 
 #define DAPM_LDO_H_STANDALONE "LDO_H"
 
@@ -165,7 +165,7 @@ enum {
 
 enum tasha_sido_voltage {
 	SIDO_VOLTAGE_SVS_MV = 1100,
-	SIDO_VOLTAGE_NOMINAL_MV = 1325,
+	SIDO_VOLTAGE_NOMINAL_MV = 1330,
 };
 
 static int dig_core_collapse_enable = 1;
@@ -810,15 +810,15 @@ static int tasha_codec_vote_max_bw(struct snd_soc_codec *codec,
 static const struct tasha_reg_mask_val tasha_spkr_default[] = {
 	{WCD9335_CDC_COMPANDER7_CTL7, 0x18, 0x18},
 	{WCD9335_CDC_COMPANDER8_CTL7, 0x18, 0x18},
-	{WCD9335_CDC_BOOST0_BOOST_CTL, 0xc6, 0xc6},
-	{WCD9335_CDC_BOOST1_BOOST_CTL, 0xc6, 0xc6},
+	{WCD9335_CDC_BOOST0_BOOST_CTL, 0x7C, 0x7C},
+	{WCD9335_CDC_BOOST1_BOOST_CTL, 0x7C, 0x7C},
 };
 
 static const struct tasha_reg_mask_val tasha_spkr_mode1[] = {
 	{WCD9335_CDC_COMPANDER7_CTL7, 0x18, 0x18},
 	{WCD9335_CDC_COMPANDER8_CTL7, 0x18, 0x18},
-	{WCD9335_CDC_BOOST0_BOOST_CTL, 0xc6, 0xc6},
-	{WCD9335_CDC_BOOST1_BOOST_CTL, 0xc6, 0xc6},
+	{WCD9335_CDC_BOOST0_BOOST_CTL, 0x7C, 0x7C},
+	{WCD9335_CDC_BOOST1_BOOST_CTL, 0x7C, 0x7C},
 };
 
 /**
@@ -11515,8 +11515,8 @@ static const struct tasha_reg_mask_val tasha_codec_reg_init_common_val[] = {
 	{WCD9335_CDC_CLSH_K2_MSB, 0x0F, 0x00},
 	{WCD9335_CDC_CLSH_K2_LSB, 0xFF, 0x60},
 	{WCD9335_CPE_SS_DMIC_CFG, 0x80, 0x00},
-	{WCD9335_CDC_BOOST0_BOOST_CTL, 0xc6, 0xc6},
-	{WCD9335_CDC_BOOST1_BOOST_CTL, 0xc6, 0xc6},
+	{WCD9335_CDC_BOOST0_BOOST_CTL, 0x7C, 0x7C},
+	{WCD9335_CDC_BOOST1_BOOST_CTL, 0x7C, 0x7C},
 	{WCD9335_CDC_RX7_RX_PATH_CFG1, 0x08, 0x08},
 	{WCD9335_CDC_RX8_RX_PATH_CFG1, 0x08, 0x08},
 	{WCD9335_ANA_LO_1_2, 0x3C, 0X3C},

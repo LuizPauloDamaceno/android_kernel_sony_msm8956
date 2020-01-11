@@ -895,7 +895,7 @@
 	qcom,usb_dp-vadc = <&pmi8950_vadc>;
 	qcom,usb_dm-vadc = <&pmi8950_vadc>;
 	qcom,usbin-vadc = <&pmi8950_vadc>;
-	qcom,float-voltage-mv = <4400>;
+	qcom,float-voltage-mv = <4425>;
 	qcom,precharging-timeout-mins = <24>;
 	qcom,charging-timeout-mins = <768>;
 	qcom,bmd-pin-src = "bpd_none";

@@ -1494,7 +1494,7 @@ static int smbchg_charging_en(struct smbchg_chip *chip, bool en)
 #endif
 #define CURRENT_500_MA		500
 #define CURRENT_900_MA		900
-#define CURRENT_1500_MA		1500
+#define CURRENT_2100_MA		2100
 #define SUSPEND_CURRENT_MA	2
 #define ICL_OVERRIDE_BIT	BIT(2)
 static int smbchg_usb_suspend(struct smbchg_chip *chip, bool suspend)
@@ -1729,8 +1729,8 @@ static int smbchg_set_usb_current_max(struct smbchg_chip *chip,
 	switch (chip->usb_supply_type) {
 	case POWER_SUPPLY_TYPE_USB:
 #ifdef CONFIG_QPNP_SMBCHARGER_EXTENSION
-		if (current_ma >= CURRENT_1500_MA)
-			current_ma = CURRENT_1500_MA;
+		if (current_ma >= CURRENT_2100_MA)
+			current_ma = CURRENT_2100_MA;
 		else if (current_ma >= CURRENT_400_MA)
 			current_ma = CURRENT_400_MA;
 		/* fall through */
@@ -1845,7 +1845,7 @@ static int smbchg_set_usb_current_max(struct smbchg_chip *chip,
 		break;
 #endif
 	case POWER_SUPPLY_TYPE_USB_CDP:
-		if (current_ma <= CURRENT_1500_MA) {
+		if (current_ma <= CURRENT_2100_MA) {
 			/* use override for CDP */
 			rc = smbchg_masked_write(chip,
 					chip->usb_chgpth_base + CMD_IL,
@@ -1953,7 +1953,7 @@ static int smbchg_set_fastchg_current_raw(struct smbchg_chip *chip,
 #define USBIN_ACTIVE_PWR_SRC_BIT	BIT(1)
 #define DCIN_ACTIVE_PWR_SRC_BIT		BIT(0)
 #define PARALLEL_REENABLE_TIMER_MS	1000
-#define PARALLEL_CHG_THRESHOLD_CURRENT	1800
+#define PARALLEL_CHG_THRESHOLD_CURRENT	2000
 static bool smbchg_is_usbin_active_pwr_src(struct smbchg_chip *chip)
 {
 	int rc;
@@ -2199,7 +2199,7 @@ static void smbchg_parallel_usb_disable(struct smbchg_chip *chip)
 
 #define PARALLEL_TAPER_MAX_TRIES		3
 #define PARALLEL_FCC_PERCENT_REDUCTION		75
-#define MINIMUM_PARALLEL_FCC_MA			500
+#define MINIMUM_PARALLEL_FCC_MA			900
 #define CHG_ERROR_BIT		BIT(0)
 #define BAT_TAPER_MODE_BIT	BIT(6)
 static void smbchg_parallel_usb_taper(struct smbchg_chip *chip)
@@ -3125,7 +3125,7 @@ module_param(smbchg_ibat_ocp_threshold_ua, int, 0644);
 #define FLASH_V_THRESHOLD	3000000
 #define FLASH_VDIP_MARGIN	100000
 #define VPH_FLASH_VDIP		(FLASH_V_THRESHOLD + FLASH_VDIP_MARGIN)
-#define BUCK_EFFICIENCY		800LL
+#define BUCK_EFFICIENCY		850LL
 static int smbchg_calc_max_flash_current(struct smbchg_chip *chip)
 {
 	int ocv_uv, esr_uohm, rbatt_uohm, ibat_now, rc;
@@ -4638,7 +4638,7 @@ static int smbchg_set_optimal_charging_mode(struct smbchg_chip *chip, int type)
 #else
 #define DEFAULT_SDP_MA		0
 #endif
-#define DEFAULT_CDP_MA		1500
+#define DEFAULT_CDP_MA		2100
 static int smbchg_change_usb_supply_type(struct smbchg_chip *chip,
 						enum power_supply_type type)
 {
@@ -4654,7 +4654,7 @@ static int smbchg_change_usb_supply_type(struct smbchg_chip *chip,
 		chip->usb_supply_type = type;
 
 	/*
-	 * Type-C only supports STD(900), MEDIUM(1500) and HIGH(3000) current
+	 * Type-C only supports STD(900), MEDIUM(2100) and HIGH(3000) current
 	 * modes, skip all BC 1.2 current if external typec is supported.
 	 * Note: for SDP supporting current based on USB notifications.
 	 */
@@ -8098,7 +8098,7 @@ err:
 	return rc;
 }
 
-#define DEFAULT_VLED_MAX_UV		3500000
+#define DEFAULT_VLED_MAX_UV		3550000
 #define DEFAULT_FCC_MA			2400
 static int smb_parse_dt(struct smbchg_chip *chip)
 {
