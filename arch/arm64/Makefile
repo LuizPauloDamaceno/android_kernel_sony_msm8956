@@ -42,7 +42,7 @@ head-y		:= arch/arm64/kernel/head.o
 TEXT_OFFSET := 0x00080000
 
 export	TEXT_OFFSET GZFLAGS
-
+core-$(CONFIG_ALUCARD_HOTPLUG)	+= arch/arm64/hotplugs/
 core-y		+= arch/arm64/kernel/ arch/arm64/mm/
 core-$(CONFIG_XEN)		+= arch/arm64/xen/
 core-$(CONFIG_KVM) += arch/arm64/kvm/
